@@ -10,6 +10,7 @@ flask = "*"
 flask-mongoengine = "*"
 singer-python = "*"
 flask-restful = "*"
+flask-bcrypt = "*"
 
 [requires]
 python_version = "3.7"

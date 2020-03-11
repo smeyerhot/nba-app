@@ -1,9 +1,14 @@
 from flask import Flask
+from flask_bcrypt import Bcrypt
 from database.db import initialize_db
-from resources.player import players
+from flask_restful import Api
+from resources.routes import initialize_routes
+
+from resources.players import players
 
 app = Flask(__name__)
-
+api = Api(app)
+bcrypt = Bcrypt(app)
 
 # players = [
 #     {
@@ -24,14 +29,14 @@ app = Flask(__name__)
 #         "positions":["SF"],
 #         "championships": 2   
 #     }
-    
-
 # ]
 
 app.config['MONGODB_SETTINGS'] = {
     'host': 'mongodb://localhost/theorize'
 }
 initialize_db(app)
+initialize_routes(api)
+
 app.register_blueprint(players)
 
 app.run()

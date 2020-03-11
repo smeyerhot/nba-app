@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/usr/bin/python3.7",
+    "python.pythonPath": "/Users/teomeyerhoff/.pyenv/versions/3.7.6/bin/python",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true
 }
